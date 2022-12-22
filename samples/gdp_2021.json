@@ -1,0 +1,301 @@
+{
+    "version": "2.0",
+    "class": "dataset",
+    "label": "Gross domestic product at market prices",
+    "source": "ESTAT",
+    "updated": "2022-12-21T23:00:00+0100",
+    "value": {
+        "38": 5490,
+        "23": 45370,
+        "4": 43330,
+        "5": 10330,
+        "34": 77750,
+        "16": 26680,
+        "6": 22270,
+        "8": 43290,
+        "7": 57520,
+        "2": 35890,
+        "3": 35890,
+        "9": 23640,
+        "11": 17010,
+        "12": 25500,
+        "0": 32430,
+        "29": 45390,
+        "13": 36660,
+        "14": 14750,
+        "20": 15840,
+        "10": 84940,
+        "31": 58130,
+        "15": 30140,
+        "18": 20000,
+        "19": 112780,
+        "17": 17890,
+        "36": 8000,
+        "21": 28890,
+        "22": 48840,
+        "33": 76590,
+        "24": 15060,
+        "25": 20850,
+        "26": 12560,
+        "39": 7800,
+        "30": 51560,
+        "27": 24770,
+        "28": 18110,
+        "40": 8190
+    },
+    "status": {
+        "38": "e",
+        "4": "p",
+        "16": "p",
+        "8": "p",
+        "11": "p",
+        "12": "p",
+        "13": "p",
+        "14": "p",
+        "20": "p",
+        "19": "p",
+        "22": "p",
+        "25": "p",
+        "26": "p",
+        "39": "p"
+    },
+    "id": [
+        "freq",
+        "na_item",
+        "unit",
+        "geo",
+        "time"
+    ],
+    "size": [
+        1,
+        1,
+        1,
+        43,
+        1
+    ],
+    "dimension": {
+        "freq": {
+            "label": "Time frequency",
+            "category": {
+                "index": {
+                    "A": 0
+                },
+                "label": {
+                    "A": "Annual"
+                }
+            }
+        },
+        "na_item": {
+            "label": "National accounts indicator (ESA 2010)",
+            "category": {
+                "index": {
+                    "B1GQ": 0
+                },
+                "label": {
+                    "B1GQ": "Gross domestic product at market prices"
+                }
+            }
+        },
+        "unit": {
+            "label": "Unit of measure",
+            "category": {
+                "index": {
+                    "CP_EUR_HAB": 0
+                },
+                "label": {
+                    "CP_EUR_HAB": "Current prices, euro per capita"
+                }
+            }
+        },
+        "geo": {
+            "label": "Geopolitical entity (reporting)",
+            "category": {
+                "index": {
+                    "EU27_2020": 0,
+                    "EU28": 1,
+                    "EA": 2,
+                    "EA19": 3,
+                    "BE": 4,
+                    "BG": 5,
+                    "CZ": 6,
+                    "DK": 7,
+                    "DE": 8,
+                    "EE": 9,
+                    "IE": 10,
+                    "EL": 11,
+                    "ES": 12,
+                    "FR": 13,
+                    "HR": 14,
+                    "IT": 15,
+                    "CY": 16,
+                    "LV": 17,
+                    "LT": 18,
+                    "LU": 19,
+                    "HU": 20,
+                    "MT": 21,
+                    "NL": 22,
+                    "AT": 23,
+                    "PL": 24,
+                    "PT": 25,
+                    "RO": 26,
+                    "SI": 27,
+                    "SK": 28,
+                    "FI": 29,
+                    "SE": 30,
+                    "IS": 31,
+                    "LI": 32,
+                    "NO": 33,
+                    "CH": 34,
+                    "UK": 35,
+                    "ME": 36,
+                    "MK": 37,
+                    "AL": 38,
+                    "RS": 39,
+                    "TR": 40,
+                    "BA": 41,
+                    "XK": 42
+                },
+                "label": {
+                    "EU27_2020": "European Union - 27 countries (from 2020)",
+                    "EU28": "European Union - 28 countries (2013-2020)",
+                    "EA": "Euro area (EA11-1999, EA12-2001, EA13-2007, EA15-2008, EA16-2009, EA17-2011, EA18-2014, EA19-2015, EA20-2023)",
+                    "EA19": "Euro area - 19 countries  (2015-2022)",
+                    "BE": "Belgium",
+                    "BG": "Bulgaria",
+                    "CZ": "Czechia",
+                    "DK": "Denmark",
+                    "DE": "Germany (until 1990 former territory of the FRG)",
+                    "EE": "Estonia",
+                    "IE": "Ireland",
+                    "EL": "Greece",
+                    "ES": "Spain",
+                    "FR": "France",
+                    "HR": "Croatia",
+                    "IT": "Italy",
+                    "CY": "Cyprus",
+                    "LV": "Latvia",
+                    "LT": "Lithuania",
+                    "LU": "Luxembourg",
+                    "HU": "Hungary",
+                    "MT": "Malta",
+                    "NL": "Netherlands",
+                    "AT": "Austria",
+                    "PL": "Poland",
+                    "PT": "Portugal",
+                    "RO": "Romania",
+                    "SI": "Slovenia",
+                    "SK": "Slovakia",
+                    "FI": "Finland",
+                    "SE": "Sweden",
+                    "IS": "Iceland",
+                    "LI": "Liechtenstein",
+                    "NO": "Norway",
+                    "CH": "Switzerland",
+                    "UK": "United Kingdom",
+                    "ME": "Montenegro",
+                    "MK": "North Macedonia",
+                    "AL": "Albania",
+                    "RS": "Serbia",
+                    "TR": "TÃ¼rkiye",
+                    "BA": "Bosnia and Herzegovina",
+                    "XK": "Kosovo (under United Nations Security Council Resolution 1244/99)"
+                }
+            }
+        },
+        "time": {
+            "label": "Time",
+            "category": {
+                "index": {
+                    "2021": 0
+                },
+                "label": {
+                    "2021": "2021"
+                }
+            }
+        }
+    },
+    "extension": {
+        "lang": "EN",
+        "description": "GDP (gross domestic product) is an indicator for a nationÂ´s economic situation. It reflects the total value of all goods and services produced less the value of goods and services used for intermediate consumption in their production. Expressing GDP in PPS (purchasing power standards) eliminates differences in price levels between countries, and calculations on a per head basis allows for the comparison of economies significantly different in absolute size.",
+        "id": "TEC00001",
+        "agencyId": "ESTAT",
+        "version": "1.0",
+        "datastructure": {
+            "id": "TEC00001",
+            "agencyId": "ESTAT",
+            "version": "36.1"
+        },
+        "annotation": [
+            {
+                "type": "DISSEMINATION_OBJECT_TYPE",
+                "title": "DATASET"
+            },
+            {
+                "type": "DISSEMINATION_PRESENTATIONS",
+                "title": "[{\"names\":{\"de\":{\"locale\":\"de\",\"value\":\"StandardprÃ¤sentation\",\"html\":false},\"en\":{\"locale\":\"en\",\"value\":\"Default presentation\",\"html\":false},\"fr\":{\"locale\":\"fr\",\"value\":\"PrÃ©sentation par dÃ©faut\",\"html\":false}},\"descriptions\":{},\"code\":\"default\",\"useAsDefault\":true,\"order\":0,\"defaultView\":\"view.table\",\"jsonFormat\":null,\"preselection\":[{\"code\":\"freq\",\"multipleSelection\":null,\"singleSelection\":\"A\"},{\"code\":\"na_item\",\"multipleSelection\":null,\"singleSelection\":\"B1GQ\"},{\"code\":\"unit\",\"multipleSelection\":null,\"singleSelection\":null},{\"code\":\"geo\",\"multipleSelection\":null,\"singleSelection\":null}],\"preselectionTimeFilter\":{\"code\":\"time\",\"multipleSelection\":null,\"singleSelection\":null,\"mode\":\"ALL\",\"from\":null,\"to\":null,\"fixed\":null},\"layoutFormat\":{\"layoutAxes\":{\"y1\":\"time\",\"x1\":\"geo\"},\"fixedMinMax\":false,\"mapProjection\":null,\"mapShowAllGeo\":true,\"mapNumberOfColors\":0,\"rankingMode\":false,\"highlightMode\":false,\"labelOption\":null,\"businessRulesStrategy\":null,\"mapClassificartionMethode\":null}}]"
+            },
+            {
+                "type": "DISSEMINATION_PRESENTATIONS_VERSION",
+                "title": "v0_4_X"
+            },
+            {
+                "type": "DISSEMINATION_SOURCE_DATASET",
+                "title": "NAMA_10_GDP,NAMA_10_PC"
+            },
+            {
+                "type": "ESMS_HTML",
+                "title": "Explanatory texts (metadata)",
+                "href": "https://ec.europa.eu/eurostat/cache/metadata/en/nama10_esms.htm"
+            },
+            {
+                "type": "ESMS_SDMX",
+                "title": "Explanatory texts (metadata)",
+                "href": "https://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=metadata/nama10_esms.sdmx.zip"
+            },
+            {
+                "type": "OBS_COUNT",
+                "title": "990"
+            },
+            {
+                "type": "OBS_PERIOD_OVERALL_LATEST",
+                "title": "2021"
+            },
+            {
+                "type": "OBS_PERIOD_OVERALL_OLDEST",
+                "title": "2010"
+            },
+            {
+                "type": "SOURCE_INSTITUTIONS",
+                "text": "Eurostat"
+            },
+            {
+                "type": "UPDATE_DATA",
+                "date": "2022-12-21T23:00:00+0100"
+            },
+            {
+                "type": "UPDATE_STRUCTURE",
+                "date": "2022-12-21T23:00:00+0100"
+            }
+        ],
+        "status": {
+            "label": {
+                "e": "estimated",
+                "p": "provisional"
+            }
+        },
+        "positions-with-no-data": {
+            "freq": [],
+            "na_item": [],
+            "unit": [],
+            "geo": [
+                1,
+                32,
+                35,
+                37,
+                41,
+                42
+            ],
+            "time": []
+        }
+    }
+}
