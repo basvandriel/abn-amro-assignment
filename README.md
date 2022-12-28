@@ -20,13 +20,14 @@ Because we're using data from GDP data from 2021, we're using 2021 data from Sta
 
 An SQL relationship between the GDP data and the age that developers of a country first start coding isn't needed. In the most simple case, if we want to have it in a database, we can have 4 columns:
 
-- id (primary_key)
-- country (varchar)
-- gdp_in_euro (decimal)
-- age (int)
+![one table column](./screenshots/one_table.png)
 
 This is a pretty clean solution for just that, but doesn't take care of the top 3 programming languages.
 
 To store the data needed for part 3, we need the 3 most popular languages of the year we're looking for. We could calculate the those ourself, but lets check [this link](https://insights.stackoverflow.com/survey/2021#section-most-popular-technologies-programming-scripting-and-markup-languages). It's JavaScript, HTML/CSS and Python. To retrieve this data, we can look at the `LanguageHaveWorkedWith` column in the StackOverflow data.
+
+This approach can be done with 2 tables, using a many-to-one relationship with a `developer` table and the use of [PostgreSQL Array types](https://www.postgresql.org/docs/current/arrays.html). We don't need all the data from the input.
+
+![two tables](./screenshots/two_table.png)
 
 ## Part 2
