@@ -31,3 +31,18 @@ This approach can be done with 2 tables, using a many-to-one relationship with a
 ![two tables](./screenshots/two_table.png)
 
 ## Part 2
+
+For creating the web service, I'm preferring Flask. This servers a minimalistic approach; it doesn't have to be asyncronous and doesn't need much other features offered by Django or a similar framework.
+
+### Scalabity improvements
+
+1. ...
+2. ...
+
+## Part 3
+
+Make sure the data is loaded and the SQL server is running. Then, execute the query located at [src/pivocat.sql](src/pivot.sql). This can be done by the following command (taken from [this StackOverflow answer](https://stackoverflow.com/a/12085561/2989034)).
+
+```sh
+psql -U <username> -d <database_name> -a -f src/pivot.sql
+```
