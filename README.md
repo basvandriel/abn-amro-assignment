@@ -36,8 +36,8 @@ For creating the web service, I'm preferring Flask. This servers a minimalistic 
 
 ### Scalabity improvements
 
-1. ...
-2. ...
+1. When wanting better performance, go for a framework with asyncronous and concurrency support. A great one is [FastAPI](https://fastapi.tiangolo.com).
+2. When dealing with lots of updates and new deployments, it might be a great idea to use Docker and a container registry to pull from. This allows the application to always have one environment to live in.
 
 ## Part 3
 
