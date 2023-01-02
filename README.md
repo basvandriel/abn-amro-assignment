@@ -16,6 +16,17 @@ The insights on StackOverflow don't have a public API, unless you want to downlo
 
 Because we're using data from GDP data from 2021, we're using 2021 data from StackOverflow. Not all data is required though, we can filter out the columns and rows that we don't need.
 
+## Setting up our environment
+
+For the sake of this project, we're using a simple virtual environment to install our dependencies in. Using Python 3.11, use the following command to create and activate the environment;
+
+```sh
+python3.11 -m venv .venv
+source .venv/bin/activate
+```
+
+To set up the enviroment, use the `make` command in the root of the project. To stop working on the project, use `deactivate`.
+
 ## Part 1
 
 An SQL relationship between the GDP data and the age that developers of a country first start coding isn't needed. In the most simple case, if we want to have it in a database, we can have 4 columns:
