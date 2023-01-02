@@ -25,7 +25,7 @@ python3.11 -m venv .venv
 source .venv/bin/activate
 ```
 
-To set up the enviroment, use the `make` command in the root of the project. To stop working on the project, use `deactivate`.
+To set up the enviroment, use the `make` command in the root of the project. We're using a `src` directory structure to easily self-install (and use) the project as a package. To stop working on the project, use `deactivate`.
 
 ## Part 1
 
