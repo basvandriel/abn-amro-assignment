@@ -8,14 +8,12 @@ from sqlalchemy.orm import scoped_session
 
 @fixture
 def app() -> Flask:
-    app = create_app("abnamro_test")
-
-    with app.app_context():
-        database.drop_all()
-        database.create_all()
+    with create_app("abnamro_test").app_context():
         yield app
 
 
 @fixture
 def sql_session(app: Flask) -> scoped_session:
+    database.drop_all()
+    database.create_all()
     return database.session
