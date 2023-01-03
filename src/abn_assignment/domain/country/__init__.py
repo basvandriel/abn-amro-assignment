@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 
-from abn_assignment.developer import Developer
+from abn_assignment.domain.developer import Developer
 
 
 @dataclass
