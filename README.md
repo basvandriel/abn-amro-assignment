@@ -50,10 +50,12 @@ For creating the web service, I'm preferring Flask. This servers a minimalistic 
 1. When wanting better performance, go for a framework with asyncronous and concurrency support. A great one is [FastAPI](https://fastapi.tiangolo.com).
 2. When dealing with lots of updates and new deployments, it might be a great idea to use Docker and a container registry to pull from. This allows the application to always have one environment to live in.
 
+Run the API with `flask --app abn_assignment.api run`.
+
 ## Part 3
 
-Make sure the data is loaded and the SQL server is running. Then, execute the query located at [src/pivocat.sql](src/pivot.sql). This can be done by the following command (taken from [this StackOverflow answer](https://stackoverflow.com/a/12085561/2989034)).
+Make sure the data is loaded and the SQL server is running. Then, execute the query located at [src/abn_assignment/pivot.sql](src/abn_assignment/pivot.sql). This can be done by the following command (taken from [this StackOverflow answer](https://stackoverflow.com/a/12085561/2989034)).
 
 ```sh
-psql -U <username> -d <database_name> -a -f src/pivot.sql
+psql -U <username> -d <database_name> -a -f src/abn_assignment/pivot.sql
 ```
