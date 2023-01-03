@@ -1,8 +1,9 @@
 from dataclasses import dataclass, field
+
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .country import Country
+    from ..country import Country
 
 
 @dataclass

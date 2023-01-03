@@ -1,6 +1,6 @@
 from sqlalchemy.orm import registry, relationship
-from .country import Country
-from .developer import Developer
+from .domain.country import Country
+from .domain.developer import Developer
 
 from .sql_tables import country_table, developer_table
 
