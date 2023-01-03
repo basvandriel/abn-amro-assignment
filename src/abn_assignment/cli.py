@@ -2,7 +2,8 @@ import click
 
 
 @click.command()
-@click.option("--name", prompt="Your name", help="The person to greet.")
-def hello(name: str):
-    """Simple program that greets NAME for a total of COUNT times."""
-    click.echo(f"Hello {name}!")
+def populate():
+    """
+    Program that populates a SQL database with GDP and StackOverflow from 2021.
+    """
+    click.echo("Hello!")
