@@ -1,5 +1,5 @@
 from .sql_database import database
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, ForeignKey, Integer, String, Float
 
 country_table = database.Table(
     "country",
@@ -14,4 +14,5 @@ developer_table = database.Table(
     Column("id", Integer, primary_key=True, nullable=False),
     Column("worked_with", String, nullable=False),
     Column("age_range", String, nullable=False),
+    Column("country_id", Integer, ForeignKey("country.id"), nullable=False),
 )
