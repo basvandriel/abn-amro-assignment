@@ -54,8 +54,8 @@ Run the API with `flask --app abn_assignment.api run`.
 
 ## Part 3
 
-Make sure the data is loaded and the SQL server is running. Then, execute the query located at [src/pivocat.sql](src/pivot.sql). This can be done by the following command (taken from [this StackOverflow answer](https://stackoverflow.com/a/12085561/2989034)).
+Make sure the data is loaded and the SQL server is running. Then, execute the query located at [src/abn_assignment/pivot.sql](src/abn_assignment/pivot.sql). This can be done by the following command (taken from [this StackOverflow answer](https://stackoverflow.com/a/12085561/2989034)).
 
 ```sh
-psql -U <username> -d <database_name> -a -f src/pivot.sql
+psql -U <username> -d <database_name> -a -f src/abn_assignment/pivot.sql
 ```
