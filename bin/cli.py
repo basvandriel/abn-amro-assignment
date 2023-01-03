@@ -1,4 +1,5 @@
-# print("oh")
-import abn_assignment
+from abn_assignment.cli import hello
 
-abn_assignment.run()
+
+if __name__ == "__main__":
+    hello()
