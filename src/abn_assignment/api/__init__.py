@@ -16,7 +16,7 @@ def create_app() -> Flask:
         "SQLALCHEMY_DATABASE_URI"
     ] = f"""
     postgresql+psycopg2://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{DATABASE_NAME}
-    """
+    """.strip()
     database.init_app(app)
 
     @app.route("/")
