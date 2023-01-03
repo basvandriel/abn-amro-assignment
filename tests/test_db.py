@@ -1,5 +1,11 @@
-from flask import Flask
+from sqlalchemy.orm import scoped_session
+
+from abn_assignment.country import Country
 
 
-def test_hi(app: Flask):
+def test_hi(sql_session: scoped_session):
+    country = Country("Nederland", "NL", 123.2, [])
+    sql_session.add(country)
+    sql_session.commit()
+
     assert True is not False
