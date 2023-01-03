@@ -16,6 +16,17 @@ The insights on StackOverflow don't have a public API, unless you want to downlo
 
 Because we're using data from GDP data from 2021, we're using 2021 data from StackOverflow. Not all data is required though, we can filter out the columns and rows that we don't need.
 
+## Setting up our environment
+
+For the sake of this project, we're using a simple virtual environment to install our dependencies in. Using Python 3.11, use the following command to create and activate the environment;
+
+```sh
+python3.11 -m venv .venv
+source .venv/bin/activate
+```
+
+To set up the enviroment, use the `make` command in the root of the project. We're using a `src` directory structure to easily self-install (and use) the project as a package. To stop working on the project, use `deactivate`.
+
 ## Part 1
 
 An SQL relationship between the GDP data and the age that developers of a country first start coding isn't needed. In the most simple case, if we want to have it in a database, we can have 4 columns:
@@ -36,8 +47,8 @@ For creating the web service, I'm preferring Flask. This servers a minimalistic 
 
 ### Scalabity improvements
 
-1. ...
-2. ...
+1. When wanting better performance, go for a framework with asyncronous and concurrency support. A great one is [FastAPI](https://fastapi.tiangolo.com).
+2. When dealing with lots of updates and new deployments, it might be a great idea to use Docker and a container registry to pull from. This allows the application to always have one environment to live in.
 
 ## Part 3
 

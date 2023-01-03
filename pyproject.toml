@@ -1,0 +1,10 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ['setuptools', 'extreqs']
+
+[project]
+name = 'abn_assignment'
+requires-python = ">=3.11"
+
+[tool.black]
+line-length = 88
