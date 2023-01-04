@@ -6,7 +6,7 @@ country_table = database.Table(
     Column("id", Integer, primary_key=True, nullable=False),
     Column("name", String, nullable=False),
     Column("iso_code", String, nullable=False),
-    Column("gdp_in_euro", Float, nullable=False),
+    Column("gdp_in_euro", Float, nullable=True),
 )
 
 developer_table = database.Table(
