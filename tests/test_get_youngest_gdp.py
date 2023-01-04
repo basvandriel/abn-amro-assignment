@@ -24,6 +24,20 @@ def test_get_gdp_only_country(
     with pytest.raises(ValueError) as e:
         client.get("/youngest_coding_gdp/NL")
 
+    assert str(e.value) == "Country does not have GDP data"
+
+
+def test_get_gdp_only_country_nodev(
+    client: FlaskClient,
+    sql_session: scoped_session,
+):
+    country = Country("Nederland", "NL", 1233, [])
+    sql_session.add(country)
+    sql_session.commit()
+
+    with pytest.raises(ValueError) as e:
+        client.get("/youngest_coding_gdp/NL")
+
     assert str(e.value) == "Developer not found"
 
 
