@@ -10,5 +10,5 @@ class Country:
     iso_code: str
 
     # Later intialized because of data mapping
-    gdp_in_euro: float | None = field(init=False)
+    gdp_in_euro: float | None
     developers: list[Developer] = field(default_factory=list)

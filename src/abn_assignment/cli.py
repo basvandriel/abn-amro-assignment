@@ -1,11 +1,9 @@
 import click
-import requests
+from abn_assignment.domain.country.service import CountryService
 
-from .constants import GDP_API_URL, USING_YEAR_DATA
-from abn_assignment.domain.country import Country
+from .constants import USING_YEAR_DATA
 
 from .sql_database import database
-from sqlalchemy.orm import scoped_session
 
 from .api import create_app
 
@@ -18,29 +16,4 @@ def populate():
     click.echo(f"Fetching GDP data from {USING_YEAR_DATA}")
 
     with create_app().app_context():
-        response = requests.get(GDP_API_URL)
-        json = response.json()
-
-        dimension_geo = json["dimension"]["geo"]
-        dimension_category = dimension_geo["category"]
-
-        gdp_values = json["value"]
-
-        gdp_indexes = dimension_category["index"]
-
-        countries: list[Country] = [
-            Country(name, iso_code)
-            for iso_code, name in dimension_category["label"].items()
-        ]
-
-        for country in countries:
-            try:
-                gdp_index = str(gdp_indexes[country.iso_code])
-                country.gdp_in_euro = gdp_values[gdp_index]
-            except KeyError:
-                # Some countries don't have data
-                country.gdp_in_euro = None
-
-            session: scoped_session = database.session
-            session.add_all(countries)
-            session.commit()
+        CountryService(database.session).fetch_gdp_data(USING_YEAR_DATA)
