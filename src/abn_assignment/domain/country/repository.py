@@ -10,7 +10,7 @@ class CountryRepository(ABC):
         ...
 
     @abstractmethod
-    def get_by_name(self: Self, name: str) -> Country | None:
+    def get_by_name(self: Self, country_name: str) -> Country | None:
         ...
 
     @abstractmethod

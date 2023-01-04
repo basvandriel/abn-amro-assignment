@@ -1,7 +1,7 @@
 from typing import Self
 from abn_assignment.domain.country import Country
 from abn_assignment.domain.country.repository import CountryRepository
-from sqlalchemy.orm import scoped_session, Query
+from sqlalchemy.orm import scoped_session
 
 
 class SQLCountryRepository(CountryRepository):
@@ -16,9 +16,9 @@ class SQLCountryRepository(CountryRepository):
 
         return country
 
-    def get_by_name(self: Self, name: str) -> Country | None:
-        country_query: Query = self.__session.query(Country).filter_by(
-            name=name,
+    def get_by_name(self: Self, country_name: str) -> Country | None:
+        country_query = self.__session.query(Country).filter_by(
+            name=country_name,
         )
         country: Country | None = country_query.first()
 

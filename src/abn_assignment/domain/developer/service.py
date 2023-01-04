@@ -16,7 +16,7 @@ from abn_assignment.constants import DATA_DIR
 
 class DeveloperService:
     __developer_repo: DeveloperRepository
-    __country_repo = CountryRepository
+    __country_repo: CountryRepository
 
     def __init__(
         self: Self,
@@ -39,9 +39,8 @@ class DeveloperService:
 
             for row in reader:
                 country = self.__country_repo.get_by_name(
-                    row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
+                    country_name=row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
                 )
-
                 if not country:
                     # TODO throw error here
                     continue
