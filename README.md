@@ -27,6 +27,8 @@ source .venv/bin/activate
 
 To set up the enviroment, use the `make` command in the root of the project. We're using a `src` directory structure to easily self-install (and use) the project as a package. To stop working on the project, use `deactivate`.
 
+For the database, a running PostgreSQL server is required. The credentials can be configured under the `DATABASE_NAME`, `DATABASE_USER` and `DATABASE_PASSWORD` environment varialble (.env file). See the example .env file [here](./.env.example).
+
 ## Part 1
 
 An SQL relationship between the GDP data and the age that developers of a country first start coding isn't needed. In the most simple case, if we want to have it in a database, we can have 4 columns:
