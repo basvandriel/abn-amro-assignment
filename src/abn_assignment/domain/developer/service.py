@@ -50,4 +50,7 @@ class Service:
                 dev = Developer(worked_with, country, firstcode)
                 devs.append(dev)
 
+        self.__session.add_all(devs)
+        self.__session.commit()
+
         return devs
