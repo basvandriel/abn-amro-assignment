@@ -2,6 +2,7 @@ from typing import Self
 from sqlalchemy.orm import scoped_session
 
 from abn_assignment.domain.country.fetcher import CountryFetcher
+from abn_assignment.domain.youngest_gdp_response import YoungestCodingGDP
 
 
 class CountryService:
@@ -16,5 +17,8 @@ class CountryService:
         self.__session.add_all(countries)
         self.__session.commit()
 
-    def get_youngest_gdp(self: Self, iso_code: str):
-        return iso_code
+    def get_youngest_gdp(self: Self, iso_code: str) -> YoungestCodingGDP:
+        # TODO create repo
+        # create query to find by iso code
+        # if none return errors
+        return YoungestCodingGDP(30.3, "nee")
