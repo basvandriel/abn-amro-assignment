@@ -1,0 +1,16 @@
+[run]
+branch = True
+source = src
+
+[report]
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
+    ...
+
+    # Don't complain if non-runnable code isn't run:
+    if __name__ == .__main__.:
+
+omit =
+  ./.venv/**
+  ./tests/*

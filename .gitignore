@@ -2,3 +2,5 @@
 __pycache__
 .env
 data/*.csv
+.coverage
+.coverage.xml
