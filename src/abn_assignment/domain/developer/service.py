@@ -54,3 +54,6 @@ class Service:
         self.__session.commit()
 
         return devs
+
+    def resolve_youngest_coding_gdp(self: Self, iso_code: str):
+        ...
