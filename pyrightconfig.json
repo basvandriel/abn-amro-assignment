@@ -1,0 +1,14 @@
+{
+    "typeCheckingMode": "strict",
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+    ],
+    "ignore": [
+        "bin",
+        ".venv"
+    ]
+}
