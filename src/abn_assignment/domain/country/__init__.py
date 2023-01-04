@@ -8,5 +8,7 @@ class Country:
     id: int = field(init=False)
     name: str
     iso_code: str
-    gdp_in_euro: float
+
+    # Later intialized because of data mapping
+    gdp_in_euro: float | None
     developers: list[Developer] = field(default_factory=list)
