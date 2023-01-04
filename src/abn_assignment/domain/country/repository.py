@@ -10,5 +10,9 @@ class CountryRepository(ABC):
         ...
 
     @abstractmethod
+    def get_by_name(self: Self, name: str) -> Country | None:
+        ...
+
+    @abstractmethod
     def save_list(self: Self, entities: list[Country]):
         ...

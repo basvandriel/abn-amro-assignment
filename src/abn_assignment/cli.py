@@ -25,7 +25,8 @@ def populate():
     developer_repo = SQLDeveloperRepository(database.session)
 
     country_service = CountryService(country_repo, developer_repo)
-    developer_service = Service(developer_repo)
+    developer_service = Service(developer_repo, country_repo)
+
     with app.app_context():
         country_service.fetch_gdp_data(USING_YEAR_DATA)
         click.echo("Succesfully saved GDP data, saving developer data")

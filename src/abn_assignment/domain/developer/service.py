@@ -1,11 +1,9 @@
-from abn_assignment.domain.country import Country
+from abn_assignment.domain.country.repository import CountryRepository
 from abn_assignment.domain.developer.constants import (
     STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX,
     STACKOVERFLOW_INSIGHTS_WORKED_WITH_INDEX,
     STACKOVERFLOW_INSIGHTS_YEAR_1ST_CODE_INDEX,
 )
-from sqlalchemy.orm import Query
-
 from abn_assignment.domain.developer.repository import DeveloperRepository
 
 from . import Developer
@@ -17,10 +15,16 @@ from abn_assignment.constants import DATA_DIR
 
 
 class Service:
-    __repository: DeveloperRepository
+    __developer_repo: DeveloperRepository
+    __country_repo = CountryRepository
 
-    def __init__(self: Self, repository: DeveloperRepository) -> None:
-        self.__repository = repository
+    def __init__(
+        self: Self,
+        developer_repo: DeveloperRepository,
+        country_repo: CountryRepository,
+    ) -> None:
+        self.__developer_repo = developer_repo
+        self.__country_repo = country_repo
 
     def save_from_stackoverflow(
         self: Self, filename: str = "survey_results_public.csv"
@@ -34,10 +38,9 @@ class Service:
             next(reader)
 
             for row in reader:
-                country_query: Query = self.__session.query(Country).filter_by(
-                    name=row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
+                country = self.__country_repo.get_by_name(
+                    row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
                 )
-                country: Country | None = country_query.first()
 
                 if not country:
                     # TODO throw error here
@@ -52,6 +55,6 @@ class Service:
                 dev = Developer(worked_with, country, firstcode)
                 devs.append(dev)
 
-        self.__repository.save_list(devs)
+        self.__developer_repo.save_list(devs)
 
         return devs
