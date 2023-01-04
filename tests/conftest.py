@@ -18,6 +18,8 @@ def app() -> Flask:
         }
     )
     with app.app_context():
+        database.drop_all()
+        database.create_all()
         yield app
 
 
@@ -28,6 +30,4 @@ def client(app) -> FlaskClient:
 
 @fixture
 def sql_session(app: Flask) -> scoped_session:
-    database.drop_all()
-    database.create_all()
     return database.session

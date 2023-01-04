@@ -27,7 +27,15 @@ source .venv/bin/activate
 
 To set up the enviroment, use the `make` command in the root of the project. We're using a `src` directory structure to easily self-install (and use) the project as a package. To stop working on the project, use `deactivate`.
 
-For the database, a running PostgreSQL server is required. The credentials can be configured under the `DATABASE_NAME`, `DATABASE_USER` and `DATABASE_PASSWORD` environment varialble (.env file). See the example .env file [here](./.env.example).
+For the database, a running PostgreSQL server is required. The credentials can be configured under the `DATABASE_NAME`, `DATABASE_USER` and `DATABASE_PASSWORD` environment varialble (.env file). See the example .env file [here](./.env.example). For testing, a database called `abnamro_test` is required.
+
+For inserting StackOverlfow data; use the `curl` command to download the survey;
+
+```sh
+curl https://info.stackoverflowsolutions.com/rs/719-EMH-566/images/stack-overflow-developer-survey-2021.zip --output devsurvey-2021.zip
+```
+
+Then, unzip it and place the biggest csv file named `survey_results_public.csv` under the `data/` directory of this project.
 
 ## Part 1
 
@@ -61,5 +69,3 @@ Make sure the data is loaded and the SQL server is running. Then, execute the qu
 ```sh
 psql -U <username> -d <database_name> -a -f src/abn_assignment/pivot.sql
 ```
-
-<!-- TODO add conclusion why i didn't add a main branch yet -->
