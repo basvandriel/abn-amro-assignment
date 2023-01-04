@@ -15,3 +15,6 @@ class CountryService:
 
         self.__session.add_all(countries)
         self.__session.commit()
+
+    def get_youngest_gdp(self: Self, iso_code: str):
+        return iso_code
