@@ -12,7 +12,16 @@ def map():
         Country,
         country_table,
         properties={
-            "developers": relationship(Developer, backref="developer"),
+            "developers": relationship(Developer, back_populates="country"),
         },
     )
-    sql_registry.map_imperatively(Developer, developer_table)
+    sql_registry.map_imperatively(
+        Developer,
+        developer_table,
+        properties={
+            "country": relationship(
+                Country,
+                back_populates="developers",
+            )
+        },
+    )
