@@ -1,3 +1,4 @@
+from typing import Any
 from flask.testing import FlaskClient
 import pytest
 from sqlalchemy.orm import scoped_session
@@ -56,7 +57,7 @@ def test_get_gdp_correct(
     sql_session.commit()
 
     response = client.get("/youngest_coding_gdp/NL")
-    json = response.json
+    json: dict[str, Any] = response.json  # type: ignore
 
     assert json["gdp_in_euros"] == 1000
     assert json["youngest_age_range"] == "10"
