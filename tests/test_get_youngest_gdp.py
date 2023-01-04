@@ -2,10 +2,9 @@ from flask.testing import FlaskClient
 
 
 def test_get_bad(client: FlaskClient):
-    response = client.get("/youngest_coding_gdp/123")
-    json = response.json
+    response = client.get("/youngest_coding_gdp/NL")
 
-    assert json == {
-        "gdp_in_euros": 30.3,
-        "youngest_age_range": "nee",
+    assert response.json == {
+        "gdp_in_euros": 893.0,
+        "youngest_age_range": "18",
     }
