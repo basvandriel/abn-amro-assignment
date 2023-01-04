@@ -12,6 +12,8 @@ from ..sql_registry import map as map_registry
 
 from ..domain.country.blueprint import blueprint
 
+map_registry()
+
 
 def create_app(database_name: str = DATABASE_NAME) -> Flask:
     app = Flask(__name__)
@@ -20,8 +22,9 @@ def create_app(database_name: str = DATABASE_NAME) -> Flask:
     ] = f"""
     postgresql+psycopg2://{DATABASE_USER}:{DATABASE_PASSWORD}@{DATABASE_HOST}:{DATABASE_PORT}/{database_name}
     """.strip()
+    #
     database.init_app(app)
-    map_registry()
+    print("hi")
 
     app.register_blueprint(blueprint)
     return app
