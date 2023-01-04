@@ -69,5 +69,3 @@ Make sure the data is loaded and the SQL server is running. Then, execute the qu
 ```sh
 psql -U <username> -d <database_name> -a -f src/abn_assignment/pivot.sql
 ```
-
-<!-- TODO add conclusion why i didn't add a main branch yet -->
