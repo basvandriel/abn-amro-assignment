@@ -1,5 +1,10 @@
 import click
-from abn_assignment.population_service import PopulationService
+from abn_assignment.domain.country.service import CountryService
+from abn_assignment.domain.country.sql_repository import SQLCountryRepository
+from abn_assignment.domain.developer.sql_repository import (
+    SQLDeveloperRepository,
+)  # noqa
+from abn_assignment.domain.developer.service import Service
 
 from .constants import USING_YEAR_DATA
 
@@ -16,11 +21,14 @@ def populate():
     app = create_app()
     click.echo(f"Fetching GDP data from {USING_YEAR_DATA}")
 
-    service = PopulationService(database.session)
+    country_repo = SQLCountryRepository(database.session)
+    developer_repo = SQLDeveloperRepository(database.session)
 
+    country_service = CountryService(country_repo, developer_repo)
+    developer_service = Service(developer_repo)
     with app.app_context():
-        service.populate_gdp_data()
+        country_service.fetch_gdp_data(USING_YEAR_DATA)
         click.echo("Succesfully saved GDP data, saving developer data")
 
-        service.populate_stackoverflow_data()
+        developer_service.save_from_stackoverflow()
         click.echo("Done")

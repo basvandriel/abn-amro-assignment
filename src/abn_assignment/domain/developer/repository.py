@@ -11,3 +11,7 @@ class DeveloperRepository(ABC):
         self: Self, country: Country
     ) -> Developer | None:  # flake8: ignore E501
         ...
+
+    @abstractmethod
+    def save_list(self: Self, entities: list[Developer]):
+        ...

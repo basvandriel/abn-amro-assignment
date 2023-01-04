@@ -22,3 +22,7 @@ class SQLDeveloperRepository(DeveloperRepository):
             .first()
         )
         return youngest_dev
+
+    def save_list(self: Self, entities: list[Developer]):
+        self.__session.add_all(entities)
+        self.__session.commit()

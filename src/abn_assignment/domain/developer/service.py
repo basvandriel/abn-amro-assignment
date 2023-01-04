@@ -4,7 +4,9 @@ from abn_assignment.domain.developer.constants import (
     STACKOVERFLOW_INSIGHTS_WORKED_WITH_INDEX,
     STACKOVERFLOW_INSIGHTS_YEAR_1ST_CODE_INDEX,
 )
-from sqlalchemy.orm import scoped_session, Query
+from sqlalchemy.orm import Query
+
+from abn_assignment.domain.developer.repository import DeveloperRepository
 
 from . import Developer
 from typing import Self
@@ -15,10 +17,10 @@ from abn_assignment.constants import DATA_DIR
 
 
 class Service:
-    __session: scoped_session
+    __repository: DeveloperRepository
 
-    def __init__(self: Self, session: scoped_session) -> None:
-        self.__session = session
+    def __init__(self: Self, repository: DeveloperRepository) -> None:
+        self.__repository = repository
 
     def save_from_stackoverflow(
         self: Self, filename: str = "survey_results_public.csv"
@@ -50,10 +52,6 @@ class Service:
                 dev = Developer(worked_with, country, firstcode)
                 devs.append(dev)
 
-        self.__session.add_all(devs)
-        self.__session.commit()
+        self.__repository.save_list(devs)
 
         return devs
-
-    def resolve_youngest_coding_gdp(self: Self, iso_code: str):
-        ...
