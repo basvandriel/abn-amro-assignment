@@ -29,6 +29,14 @@ To set up the enviroment, use the `make` command in the root of the project. We'
 
 For the database, a running PostgreSQL server is required. The credentials can be configured under the `DATABASE_NAME`, `DATABASE_USER` and `DATABASE_PASSWORD` environment varialble (.env file). See the example .env file [here](./.env.example). For testing, a database called `abnamro_test` is required.
 
+For inserting StackOverlfow data; use the `curl` command to download the survey;
+
+```sh
+curl https://info.stackoverflowsolutions.com/rs/719-EMH-566/images/stack-overflow-developer-survey-2021.zip --output devsurvey-2021.zip
+```
+
+Then, unzip it and place the biggest csv file named `survey_results_public.csv` under the `data/` directory of this project.
+
 ## Part 1
 
 An SQL relationship between the GDP data and the age that developers of a country first start coding isn't needed. In the most simple case, if we want to have it in a database, we can have 4 columns:
