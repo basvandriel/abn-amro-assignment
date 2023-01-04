@@ -4,7 +4,7 @@ from abn_assignment.domain.country.sql_repository import SQLCountryRepository
 from abn_assignment.domain.developer.sql_repository import (
     SQLDeveloperRepository,
 )  # noqa
-from abn_assignment.domain.developer.service import Service
+from abn_assignment.domain.developer.service import DeveloperService
 
 from .constants import USING_YEAR_DATA
 
@@ -25,7 +25,7 @@ def populate():
     developer_repo = SQLDeveloperRepository(database.session)
 
     country_service = CountryService(country_repo, developer_repo)
-    developer_service = Service(developer_repo, country_repo)
+    developer_service = DeveloperService(developer_repo, country_repo)
 
     with app.app_context():
         country_service.fetch_gdp_data(USING_YEAR_DATA)

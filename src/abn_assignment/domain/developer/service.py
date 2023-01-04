@@ -14,7 +14,7 @@ import csv
 from abn_assignment.constants import DATA_DIR
 
 
-class Service:
+class DeveloperService:
     __developer_repo: DeveloperRepository
     __country_repo = CountryRepository
 

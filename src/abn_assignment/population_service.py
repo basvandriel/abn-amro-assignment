@@ -2,7 +2,7 @@ from typing import Self
 from sqlalchemy.orm import scoped_session
 
 from abn_assignment.domain.country.service import CountryService
-from abn_assignment.domain.developer.service import Service
+from abn_assignment.domain.developer.service import DeveloperService
 from .constants import USING_YEAR_DATA
 
 
@@ -23,5 +23,5 @@ class PopulationService:
     def populate_stackoverflow_data(
         self: Self, filename: str = "survey_results_public.csv"
     ):
-        developer_service = Service(self.__session)
+        developer_service = DeveloperService(self.__session)
         developer_service.save_from_stackoverflow(filename)
