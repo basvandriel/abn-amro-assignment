@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from abn_assignment.domain.developer import Developer
+
 
 @dataclass
 class Country:
@@ -7,3 +9,4 @@ class Country:
     name: str
     iso_code: str
     gdp_in_euro: float
+    developers: list[Developer] = field(default_factory=list)
