@@ -12,6 +12,8 @@ from .sql_database import database
 
 from .api import create_app
 
+from sqlalchemy.orm import scoped_session
+
 
 @click.command()
 def populate():
@@ -20,9 +22,10 @@ def populate():
     """
     app = create_app()
     click.echo(f"Fetching GDP data from {USING_YEAR_DATA}")
+    session: scoped_session = database.session  # type: ignore
 
-    country_repo = SQLCountryRepository(database.session)
-    developer_repo = SQLDeveloperRepository(database.session)
+    country_repo = SQLCountryRepository(session)
+    developer_repo = SQLDeveloperRepository(session)
 
     country_service = CountryService(country_repo, developer_repo)
     developer_service = DeveloperService(developer_repo, country_repo)

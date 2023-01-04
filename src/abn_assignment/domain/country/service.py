@@ -28,8 +28,12 @@ class CountryService:
 
         if not country:
             raise ValueError("ISO-code not found")
+        if not country.gdp_in_euro:
+            raise ValueError("Country does not have GDP data")
 
-        if dev := (self.__developer_repo.get_youngest_by_country(country)):
-            return YoungestCodingGDP(country.gdp_in_euro, dev.age_range)
-        else:
+        dev = self.__developer_repo.get_youngest_by_country(country)
+
+        if not dev:
             raise ValueError("Developer not found")
+
+        return YoungestCodingGDP(country.gdp_in_euro, dev.age_range)
