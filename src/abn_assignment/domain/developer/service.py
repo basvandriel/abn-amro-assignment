@@ -1,9 +1,10 @@
+from abn_assignment.domain.country import Country
 from abn_assignment.domain.developer.constants import (
     STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX,
     STACKOVERFLOW_INSIGHTS_WORKED_WITH_INDEX,
     STACKOVERFLOW_INSIGHTS_YEAR_1ST_CODE_INDEX,
 )
-from sqlalchemy.orm import scoped_session
+from sqlalchemy.orm import scoped_session, Query
 
 from . import Developer
 from typing import Self
@@ -31,14 +32,22 @@ class Service:
             next(reader)
 
             for row in reader:
-                country_name: str = row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
+                country_query: Query = self.__session.query(Country).filter_by(
+                    name=row[STACKOVERFLOW_INSIGHTS_COUNTRY_INDEX]
+                )
+                country: Country | None = country_query.first()
+
+                if not country:
+                    # TODO throw error here
+                    continue
+
                 worked_with_unformatted: str = row[
                     STACKOVERFLOW_INSIGHTS_WORKED_WITH_INDEX
                 ]
                 worked_with: list[str] = worked_with_unformatted.split(";")
                 firstcode = row[STACKOVERFLOW_INSIGHTS_YEAR_1ST_CODE_INDEX]
 
-                # Developer(worked_with)
-                print(row)
+                dev = Developer(worked_with, country, firstcode)
+                devs.append(dev)
 
         return devs
